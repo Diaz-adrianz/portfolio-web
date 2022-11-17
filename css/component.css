@@ -1,0 +1,48 @@
+/* GRIDBOX  */
+.gridbox {
+	display: grid;
+	gap: 1.5em;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.gridbox .item {
+	position: relative;
+	max-height: 240px;
+}
+.gridbox .item .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 1em;
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	transition: 0.3s;
+	z-index: 5;
+}
+.gridbox .item img {
+	transition: 0.3s;
+}
+.gridbox .item h3 {
+	transform: translateY(-100%);
+	transition: 0.2s;
+	opacity: 0;
+}
+.gridbox .item span {
+	position: relative;
+	opacity: 0;
+	transition: 0.2s;
+}
+.gridbox .item:hover h3,
+.gridbox .item:hover span {
+	transform: none;
+	opacity: 1;
+}
+.gridbox .item:hover .overlay {
+	opacity: 1;
+}
+.gridbox .item:hover {
+	border: 3px solid var(--accent);
+}
+.gridbox .item:hover img {
+	transform: scale(1.2);
+}

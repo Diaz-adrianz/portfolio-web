@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	color: var(--white);
+	font-family: 'Quicksand', sans-serif;
+}
+:root {
+	--success: #4bb543;
+	--warning: #eed202;
+	--err: #ff0000;
+	--dark: #141414;
+	--black: #261e1a;
+	--blackey: #2e2523;
+	--shade: #454545;
+	--secondary: #38302e;
+	--gray: #454545;
+	--silver: #a0a0a0;
+	--white: #f8f9fa;
+	--accent: #d89ee5;
+	--accent-shade: #825f89;
+	--accent-tint: #e4bbed;
+
+	--black-rgb: 38, 30, 26;
+	--accent-rgb: 255, 134, 36;
+	--white-rgb: 248, 249, 250;
+	--secondary-rgb: 99, 99, 99;
+	--silver-rgb: 211, 211, 211;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	background: none;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--silver, #393e46);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--secondary, #fd7014) !important;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+html.noscroll {
+	overflow-y: hidden;
+}
+body {
+	position: relative;
+	background-color: var(--black);
+	overflow-x: hidden;
+}
+body.noscroll {
+	overflow-y: hidden;
+}
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 60;
+	width: 100%;
+	height: 100vh;
+	display: none;
+	backdrop-filter: blur(15px);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.backdrop.show {
+	display: block;
+}
+
+/* REMOVE DEFAULT  */
+.noscrollbar::-webkit-scrollbar {
+	height: 3px;
+	display: none;
+}
+.d-0 {
+	display: none !important;
+}
+.d-flex {
+	display: flex;
+	gap: 0.5em;
+}
+.d-flex-v {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+.center-flex-y {
+	justify-content: center;
+}
+.center-flex {
+	align-items: center;
+}
+.o-0 {
+	opacity: 0 !important;
+}
+.p-0 {
+	padding: 0 !important;
+}
+.m-0 {
+	margin: 0 !important;
+}
+ul {
+	list-style: none;
+}
+
+/* IMGS  */
+figure {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.5em;
+	border: 1px solid var(--silver);
+}
+figure img {
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	object-fit: cover;
+}
+/* COLOR  */
+.light {
+	color: var(--white);
+}
+/* TEXTS  */
+h1 {
+	font-size: 3.5em;
+	font-family: 'Ubuntu';
+}
+h2 {
+	font-size: 2em;
+	font-family: 'Ubuntu';
+}
+h3 {
+	font-size: 1.5em;
+	font-family: 'Ubuntu';
+	margin-bottom: 0.3em;
+}
+h5 {
+	font-size: 1.25em;
+	font-family: 'Ubuntu';
+	margin-bottom: 0.3em;
+}
+hr {
+	border: 1px solid var(--shade) !important;
+	margin: 2em 0;
+}
+.md {
+	font-size: 0.9em;
+}
+.sm {
+	font-size: 0.8em;
+}
+.bold {
+	font-weight: bold;
+}
+.no-bold {
+	font-weight: normal;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+/* LINKS & span */
+a {
+	text-decoration: none;
+	color: var(--secondary);
+	font-size: inherit;
+}
+span {
+	font-size: inherit;
+	color: var(--silver);
+}
+.accent {
+	color: var(--accent);
+}
+.link {
+	color: var(--silver) !important;
+	transition: 0.2s;
+	background: none;
+	border: none;
+	outline: none;
+	position: relative;
+	cursor: pointer;
+}
+.link.accent {
+	color: var(--accent) !important;
+}
+.link.accent > * {
+	color: var(--accent);
+}
+.link > * {
+	color: var(--silver);
+}
+.link:hover,
+.link.on,
+.link:hover > * {
+	color: var(--accent-tint) !important;
+}
+
+/* BUTTONS  */
+.btn {
+	overflow: hidden;
+	display: inline-block;
+	color: var(--dark);
+	font-weight: bold;
+	background-color: var(--accent);
+	text-decoration: none;
+	border: none;
+	transition: 0.2s;
+	border-radius: 0.3em;
+	white-space: nowrap;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	outline: none;
+}
+.btn > *,
+.btn > *:hover {
+	color: inherit !important;
+	transition: inherit !important;
+}
+.btn-o {
+	border: 2px solid var(--accent);
+	background: none;
+	color: var(--accent);
+}
+.btn-o:focus {
+	border-color: var(--accent-shade);
+}
+.btn-sm {
+	font-size: 0.85em;
+}
+.btn-mn {
+	font-size: 0.7em;
+}
+.btn-lg {
+	font-size: 1.2em;
+}
+.btn:hover {
+	color: var(--black);
+	background-color: var(--accent-tint);
+}
+.btn:active {
+	transform: scale(0.95);
+}
+.btn-s {
+	color: var(--white);
+	background-color: var(--shade);
+}
+.btn-s:hover {
+	color: var(--white);
+	background-color: var(--secondary);
+}
+.btn-t {
+	color: var(--silver);
+	background: none;
+}
+.btn-t:focus,
+.btn-t:hover,
+.btn-t.focus {
+	background: var(--shade);
+	color: var(--white);
+}
+.btn-t.light:hover {
+	color: var(--white);
+}
+.btn-t.on {
+	background-color: var(--shade);
+	color: var(--accent) !important;
+}
+
+.btn.outlined {
+	border: 1px solid var(--silver);
+}
+.btn.outlined:hover {
+	border-color: var(--accent);
+}
+.btn.disabled {
+	cursor: not-allowed;
+	color: var(--dark) !important;
+	background-color: var(--secondary) !important;
+}
+/* UTILITIES  */
+.t-shadow {
+	text-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+}
+.shadow {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.pill {
+	border-radius: 50rem;
+}
+
+/* ICONS  */
+.iconize-vert {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.3em;
+}
+.iconize-vert p {
+	font-size: 0.7em;
+	color: inherit;
+}
+.btn.iconize-vert {
+	padding: 0.5em;
+}
+.btn.iconize-vert.on p {
+	display: none;
+	color: inherit;
+}
+.iconize-vert i {
+	font-size: 1.8em;
+	color: inherit;
+}
+i.fix {
+	position: relative;
+	top: 1px;
+}
+i.fixx {
+	position: relative;
+	top: 2px;
+}
+/* INPUTS  */
+input,
+textarea,
+select {
+	min-width: none;
+	width: 100%;
+	background: none;
+	border: 1px solid var(--silver);
+	border-radius: 0.3em;
+	color: var(--white);
+	padding: 0.5em 1em;
+}
+input::placeholder {
+	color: var(--secondary);
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--accent);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	box-shadow: 0 0 0 50px var(--secondary) inset; /* Change the color to your own background color */
+	-webkit-text-fill-color: var(--white);
+}
+.inp-float {
+	position: relative;
+	border-radius: 0.3em;
+	position: relative;
+	padding: 0.3em 0 0;
+	background-color: var(--secondary);
+	border: 1px solid var(--gray);
+}
+.inp-float > .attr {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.5em;
+}
+.inp-float > .inp {
+	width: 100%;
+	padding: 1em 0.5em 0.5em;
+	border: none;
+}
+.inp-float > span {
+	position: absolute;
+	top: 0.75em;
+	left: 0.5em;
+	pointer-events: none;
+	background-color: inherit;
+	border-radius: 10px;
+	transition: 0.3s;
+}
+.inp-float > .inp:focus ~ span,
+.inp-float > .inp:valid ~ span {
+	top: 0.5em;
+	font-size: 0.7em;
+}
+textarea {
+	resize: none;
+	padding: 0 1em;
+}
+/* animation  */
+.fade {
+	animation: fade 0.4s forwards;
+}
+.fadeup {
+	animation: fadeup 0.4s forwards;
+}
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeup {
+	from {
+		opacity: 0;
+		transform: translateY(5em);
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes fadeout {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+/* TINYMCE  */

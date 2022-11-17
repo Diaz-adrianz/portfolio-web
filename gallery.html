@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand&family=Ubuntu&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/layout.css" />
+		<link rel="stylesheet" href="css/component.css" />
+		<link rel="stylesheet" href="css/spacing.css" />
+		<link rel="stylesheet" href="css/media.css" />
+		<title>Gallery | dazveloper</title>
+	</head>
+	<body>
+		<div class="backdrop fade"></div>
+		<div class="container">
+			<aside id="aside" class="d-flex-v center-flex with-bd">
+				<figure
+					id="logo"
+					class="gsap-anim"
+					data-gsaptype="zoom-out"
+					data-duration="1"
+				>
+					<img src="img/logo.png" alt="" />
+				</figure>
+
+				<nav class="d-flex-v mt-5">
+					<a
+						href="index.html"
+						class="mb-2 link gsap-anim"
+						data-gsaptype="fade-left"
+						data-duration="1.2"
+					>
+						Work
+					</a>
+					<a
+						href="gallery.html"
+						class="mb-2 link on gsap-anim"
+						data-gsaptype="fade-left"
+						data-duration="1"
+					>
+						Gallery
+					</a>
+					<a
+						href="services.html"
+						class="mb-2 link gsap-anim"
+						data-gsaptype="fade-left"
+						data-duration="0.75"
+					>
+						Services
+					</a>
+					<a
+						href="about.html"
+						class="mb-2 link gsap-anim"
+						data-gsaptype="fade-left"
+						data-duration="0.5"
+					>
+						about
+					</a>
+				</nav>
+
+				<div class="d-flex mt-auto">
+					<a
+						href=""
+						class="link mx-1 fab fa-instagram tooltip gsap-anim"
+						data-gsaptype="fade-up"
+						data-duration="0.25"
+						data-text="Instagram"
+						data-pos="right"
+					></a>
+					<a
+						href=""
+						class="link mx-1 fab fa-linkedin tooltip gsap-anim"
+						data-duration="0.5"
+						data-gsaptype="fade-up"
+						data-text="Linkedin"
+						data-pos="right"
+					></a>
+					<a
+						href=""
+						class="link mx-1 fab fa-github tooltip gsap-anim"
+						data-duration="0.75"
+						data-gsaptype="fade-up"
+						data-text="Github"
+						data-pos="right"
+					></a>
+				</div>
+			</aside>
+			<main class="">
+				<header class="d-flex center-flex">
+					<div>
+						<p
+							class="mb-2 gsap-anim"
+							data-gsaptype="fade-left"
+							data-duration="0.75"
+						>
+							Some achievements
+						</p>
+						<h3 class="gsap-anim" data-gsaptype="fade-left" data-duration="1.3">
+							Check this out!
+						</h3>
+					</div>
+					<button
+						class="btn btn-t btn-lg ms-auto iconize-vert with-bd"
+						onclick="showup(event, this, 'menu')"
+						data-target="aside"
+					>
+						<i class="material-icons">menu</i>
+					</button>
+				</header>
+
+				<hr />
+				<h3 class="mb-2"><span>Web Development</span></h3>
+				<div class="gridbox">
+					<figure
+						class="item gsap-anim"
+						data-gsaptype="fade-up"
+						data-duration="0.75"
+					>
+						<div class="overlay">
+							<h3 class="mb-2">Serat Catalogue</h3>
+							<span># web development</span>
+						</div>
+						<img src="img/serat2.png" alt="" />
+					</figure>
+					<figure
+						class="item gsap-anim"
+						data-gsaptype="fade-up"
+						data-duration="1"
+					>
+						<div class="overlay">
+							<h3 class="mb-2">Ingfokanime</h3>
+							<span># web development</span>
+							<span># fetch javascript</span>
+						</div>
+						<img src="img/nime1.png" alt="" />
+					</figure>
+					<figure
+						class="item gsap-anim"
+						data-gsaptype="fade-up"
+						data-duration="1.25"
+					>
+						<div class="overlay">
+							<h3 class="mb-2">Binjai 100</h3>
+							<span># web development</span>
+							<span># mini game</span>
+						</div>
+						<img src="img/binjai3.png" alt="" />
+					</figure>
+				</div>
+
+				<hr />
+				<h3 class="mb-2"><span>Bussiness</span></h3>
+				<div class="gridbox">
+					<figure
+						class="item gsap-anim"
+						data-gsaptype="fade-up"
+						data-duration="0.75"
+					>
+						<div class="overlay">
+							<h3 class="mb-2">Minicase Compfest</h3>
+							<span># bussiness solution</span>
+						</div>
+						<img src="img/thumb.png" alt="" />
+					</figure>
+				</div>
+
+				<footer
+					class="d-flex pt-5 mt-5 mb-3 center-flex-y gsap-anim"
+					data-gsaptype="zoom-in"
+					data-duration="1s"
+				>
+					<span>Designed & Developed by Diaz @2022</span>
+				</footer>
+			</main>
+		</div>
+
+		<script src="js/gsap-public/minified/gsap.min.js"></script>
+		<script src="js/gsap-public/minified/ScrollTrigger.min.js"></script>
+
+		<script
+			src="https://kit.fontawesome.com/bc418b707a.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="js/main.js"></script>
+		<script src="js/config_gsap.js"></script>
+	</body>
+</html>

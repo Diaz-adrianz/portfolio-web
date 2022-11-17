@@ -1,0 +1,68 @@
+.container {
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	gap: 2em;
+	height: 100vh;
+	display: flex;
+}
+.container aside {
+	height: 100%;
+	padding: 2em 1em;
+}
+.container aside #logo {
+	width: 80px;
+	height: 80px;
+	border: none;
+}
+.container aside nav {
+	align-items: flex-end;
+}
+.container main {
+	height: 100%;
+	overflow: auto;
+	flex: 1;
+	min-height: 100vh;
+	padding: 0 1em;
+}
+.container main::-webkit-scrollbar {
+	display: none;
+}
+.container main header {
+	z-index: 40;
+	position: sticky;
+	padding: 2.5em 0 1em;
+	top: 0;
+	background-color: var(--black);
+}
+.container main header > button {
+	display: none;
+}
+#about {
+	gap: 2em;
+}
+#about > div {
+	flex: 1;
+}
+#about > div p {
+	line-height: 1.7em;
+}
+#about figure {
+	width: 240px;
+	max-width: 240px;
+	flex: 1;
+}
+#services .box {
+	gap: 1em;
+	background-color: var(--blackey);
+	padding: 1em;
+	border-radius: 0.5em;
+}
+#services .box i {
+	font-size: 4em;
+}
+#contact {
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
